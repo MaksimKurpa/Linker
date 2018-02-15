@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LNModel {
+internal struct LNModel {
     
     init(clss: AnyClass, selector: Selector, execution:@escaping ExecutionClosureType ) {
         
@@ -77,17 +77,17 @@ struct LNModel {
     
     //MARK: - Properties
     
-    var selector: Selector {
+    public var selector: Selector {
         return _selector
     }
-    var clss: AnyClass {
+    public var clss: AnyClass {
         return _clss
     }
-    var execution: AnyObject? {
+    public var execution: AnyObject? {
         return _execution
     }
     
-    private var _selector: Selector;
-    private var _clss: AnyClass
-    private var _execution: AnyObject?;
+    fileprivate var _selector: Selector;
+    fileprivate var _clss: AnyClass
+    fileprivate var _execution: AnyObject?;
 }

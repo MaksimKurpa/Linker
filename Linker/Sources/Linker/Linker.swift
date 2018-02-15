@@ -9,11 +9,17 @@
 import UIKit
 import CoreFoundation
 
-class Linker: NSObject {
+open class Linker: NSObject {
     
-    private static var handlingURL : URL?
+    open class func handle(_ url: URL, closure: @escaping (_ url: URL) -> Void) {
+        _ = swizzleOnce
+        let key = url.key()
+        closuresDict[key] = closure
+    }
     
-    private static func models(execution: @escaping ExecutionClosureType) -> [LNModel] {
+    fileprivate static var handlingURL : URL?
+    
+    fileprivate static func models(execution: @escaping ExecutionClosureType) -> [LNModel] {
         return Array(arrayLiteral:
             LNModel(clss:type(of: UIApplication.shared),
                          selector:NSSelectorFromString("openURL:options:completionHandler:"),
@@ -74,7 +80,7 @@ class Linker: NSObject {
         method_exchangeImplementations(method!, replaceMethod!)
     }
     
-    private static var swizzleOnce: Void = {
+    fileprivate static var swizzleOnce: Void = {
         
         let execution: (URL) -> (URL?) =  {url in
             return Linker.handle(url)
@@ -84,19 +90,14 @@ class Linker: NSObject {
         }
     }()
     
-    @objc internal func fakeMethod() -> Void {
+    @objc fileprivate func fakeMethod() -> Void {
     }
     
-    static private var closuresDict: [String : LinkerClosureType] = {
+    static fileprivate var closuresDict: [String : LinkerClosureType] = {
         return [:] }()
     
-    internal class func handle(_ url: URL, closure: @escaping LinkerClosureType) {
-        _ = swizzleOnce
-        let key = url.key()
-        closuresDict[key] = closure
-    }
 
-    internal class func handle(_ url: URL) -> URL? {
+    fileprivate class func handle(_ url: URL) -> URL? {
         
         let urlStringKey: String = url.key()
         let closure: LinkerClosureType? = closuresDict[urlStringKey]
@@ -117,7 +118,7 @@ class Linker: NSObject {
         return nil
     }
     
-    internal class func handleIfAppIsLoaded(withConmplitionBlock complitionBlock: @escaping () -> ()) {
+    fileprivate class func handleIfAppIsLoaded(withConmplitionBlock complitionBlock: @escaping () -> ()) {
         if UIApplication.shared.applicationState == .active {
             self.handlingURL = nil
             complitionBlock()
