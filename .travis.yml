@@ -3,4 +3,4 @@ os:
 language: swift
 osx_image: xcode9.2
 script:
-- xcodebuild clean build test -project Linker.xcodeproj -scheme LinkerTests
+  - ./bin/tests
