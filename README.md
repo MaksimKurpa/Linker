@@ -1,4 +1,4 @@
-![logo](Configs/logo.png)
+![logo](Linker/Configs/logo.png)
 
 # Linker
 
