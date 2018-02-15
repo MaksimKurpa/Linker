@@ -2,5 +2,5 @@ os:
   - osx
 language: swift
 osx_image: xcode9.2
-xcode_project: Linker.xcodeproj
-xcode_scheme: LinkerTests
+script:
+- xcodebuild clean build test -project Linker.xcodeproj -scheme LinkerTests
