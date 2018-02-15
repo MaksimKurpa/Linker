@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B559188D2035D00B00AFB31A /* LinkerTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55918782035D00B00AFB31A /* LinkerTests.plist */; };
-		B559188E2035D00B00AFB31A /* Linker.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55918792035D00B00AFB31A /* Linker.plist */; };
 		B559188F2035D00B00AFB31A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B559187A2035D00B00AFB31A /* logo.png */; };
 		B55918902035D00B00AFB31A /* Linker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559187D2035D00B00AFB31A /* Linker.swift */; };
 		B55918912035D00C00AFB31A /* LinkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559187E2035D00B00AFB31A /* LinkerModel.swift */; };
 		B55918922035D00C00AFB31A /* LinkerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559187F2035D00B00AFB31A /* LinkerExtensions.swift */; };
 		B55918932035D00C00AFB31A /* LinkerTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918802035D00B00AFB31A /* LinkerTypes.swift */; };
-		B55918942035D00C00AFB31A /* LinkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918822035D00B00AFB31A /* LinkerTests.swift */; };
-		B55918952035D00C00AFB31A /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918842035D00B00AFB31A /* Expectation.swift */; };
-		B55918962035D00C00AFB31A /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918852035D00B00AFB31A /* Failure.swift */; };
-		B55918972035D00C00AFB31A /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918862035D00B00AFB31A /* Global.swift */; };
-		B55918982035D00C00AFB31A /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918872035D00B00AFB31A /* Context.swift */; };
-		B55918992035D00C00AFB31A /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918882035D00B00AFB31A /* Case.swift */; };
-		B559189A2035D00C00AFB31A /* GlobalContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918892035D00B00AFB31A /* GlobalContext.swift */; };
-		B559189B2035D00C00AFB31A /* Reporters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559188A2035D00B00AFB31A /* Reporters.swift */; };
-		B559189C2035D00C00AFB31A /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559188B2035D00B00AFB31A /* Reporter.swift */; };
-		B559189D2035D00C00AFB31A /* LinkerMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559188C2035D00B00AFB31A /* LinkerMocks.swift */; };
+		B559189F2035E27900AFB31A /* LinkerMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559188C2035D00B00AFB31A /* LinkerMocks.swift */; };
+		B55918A02035E28300AFB31A /* LinkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918822035D00B00AFB31A /* LinkerTests.swift */; };
+		B55918A12035E33700AFB31A /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918842035D00B00AFB31A /* Expectation.swift */; };
+		B55918A22035E33700AFB31A /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918852035D00B00AFB31A /* Failure.swift */; };
+		B55918A32035E33700AFB31A /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918862035D00B00AFB31A /* Global.swift */; };
+		B55918A42035E33700AFB31A /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918872035D00B00AFB31A /* Context.swift */; };
+		B55918A52035E33700AFB31A /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918882035D00B00AFB31A /* Case.swift */; };
+		B55918A62035E33700AFB31A /* GlobalContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55918892035D00B00AFB31A /* GlobalContext.swift */; };
+		B55918A72035E33700AFB31A /* Reporters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559188A2035D00B00AFB31A /* Reporters.swift */; };
+		B55918A82035E33700AFB31A /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559188B2035D00B00AFB31A /* Reporter.swift */; };
+		B55918A92035E35600AFB31A /* LinkerTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55918782035D00B00AFB31A /* LinkerTests.plist */; };
+		B55918AA2035E35B00AFB31A /* Linker.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55918792035D00B00AFB31A /* Linker.plist */; };
+		B55918AB2035E5AF00AFB31A /* LinkerTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55918782035D00B00AFB31A /* LinkerTests.plist */; };
 		B5A43E8520358F62004D27CA /* Linker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A43E7B20358F62004D27CA /* Linker.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,8 +113,8 @@
 		B55918812035D00B00AFB31A /* LinkerTests */ = {
 			isa = PBXGroup;
 			children = (
-				B55918822035D00B00AFB31A /* LinkerTests.swift */,
 				B55918832035D00B00AFB31A /* Spectre */,
+				B55918822035D00B00AFB31A /* LinkerTests.swift */,
 				B559188C2035D00B00AFB31A /* LinkerMocks.swift */,
 			);
 			name = LinkerTests;
@@ -247,9 +248,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B559188D2035D00B00AFB31A /* LinkerTests.plist in Resources */,
-				B559188E2035D00B00AFB31A /* Linker.plist in Resources */,
 				B559188F2035D00B00AFB31A /* logo.png in Resources */,
+				B55918AB2035E5AF00AFB31A /* LinkerTests.plist in Resources */,
+				B55918AA2035E35B00AFB31A /* Linker.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55918A92035E35600AFB31A /* LinkerTests.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,19 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B559189D2035D00C00AFB31A /* LinkerMocks.swift in Sources */,
-				B55918972035D00C00AFB31A /* Global.swift in Sources */,
 				B55918912035D00C00AFB31A /* LinkerModel.swift in Sources */,
-				B559189A2035D00C00AFB31A /* GlobalContext.swift in Sources */,
-				B559189C2035D00C00AFB31A /* Reporter.swift in Sources */,
 				B55918922035D00C00AFB31A /* LinkerExtensions.swift in Sources */,
-				B55918962035D00C00AFB31A /* Failure.swift in Sources */,
 				B55918932035D00C00AFB31A /* LinkerTypes.swift in Sources */,
-				B55918942035D00C00AFB31A /* LinkerTests.swift in Sources */,
-				B55918982035D00C00AFB31A /* Context.swift in Sources */,
-				B559189B2035D00C00AFB31A /* Reporters.swift in Sources */,
-				B55918992035D00C00AFB31A /* Case.swift in Sources */,
-				B55918952035D00C00AFB31A /* Expectation.swift in Sources */,
 				B55918902035D00B00AFB31A /* Linker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +280,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55918A22035E33700AFB31A /* Failure.swift in Sources */,
+				B55918A02035E28300AFB31A /* LinkerTests.swift in Sources */,
+				B55918A12035E33700AFB31A /* Expectation.swift in Sources */,
+				B55918A42035E33700AFB31A /* Context.swift in Sources */,
+				B55918A62035E33700AFB31A /* GlobalContext.swift in Sources */,
+				B55918A32035E33700AFB31A /* Global.swift in Sources */,
+				B55918A82035E33700AFB31A /* Reporter.swift in Sources */,
+				B55918A52035E33700AFB31A /* Case.swift in Sources */,
+				B559189F2035E27900AFB31A /* LinkerMocks.swift in Sources */,
+				B55918A72035E33700AFB31A /* Reporters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +428,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Configs/Linker.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Linker/Configs/Linker.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -450,7 +452,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Configs/Linker.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Linker/Configs/Linker.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -470,8 +472,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NX84NCXAJ3;
-				INFOPLIST_FILE = Configs/LinkerTests.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Linker/Configs/LinkerTests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maksimkurpa.LinkerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,8 +491,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NX84NCXAJ3;
-				INFOPLIST_FILE = Configs/LinkerTests.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/Linker/Configs/LinkerTests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maksimkurpa.LinkerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

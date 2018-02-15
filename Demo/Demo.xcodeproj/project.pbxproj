@@ -20,23 +20,12 @@
 		B5A43E6B203489B9004D27CA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A43E52203489B9004D27CA /* main.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B58BF19C2032133C006921B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B58BF17F2032133C006921B2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B58BF1862032133C006921B2;
-			remoteInfo = Linker;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		B559186F2035CE2200AFB31A /* Linker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Linker.swift; sourceTree = "<group>"; };
 		B55918702035CE2200AFB31A /* LinkerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkerModel.swift; sourceTree = "<group>"; };
 		B55918712035CE2200AFB31A /* LinkerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkerExtensions.swift; sourceTree = "<group>"; };
 		B55918722035CE2200AFB31A /* LinkerTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkerTypes.swift; sourceTree = "<group>"; };
 		B58BF1872032133C006921B2 /* Linker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B58BF19B2032133C006921B2 /* LinkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A43E4A203489B9004D27CA /* LNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LNViewController.swift; sourceTree = "<group>"; };
 		B5A43E4B203489B9004D27CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5A43E4C203489B9004D27CA /* LNAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LNAppDelegate.swift; sourceTree = "<group>"; };
@@ -49,13 +38,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		B58BF1842032133C006921B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B58BF1982032133C006921B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -98,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				B58BF1872032133C006921B2 /* Linker.app */,
-				B58BF19B2032133C006921B2 /* LinkerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,24 +119,6 @@
 			productReference = B58BF1872032133C006921B2 /* Linker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B58BF19A2032133C006921B2 /* LinkerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B58BF1A72032133C006921B2 /* Build configuration list for PBXNativeTarget "LinkerTests" */;
-			buildPhases = (
-				B58BF1972032133C006921B2 /* Sources */,
-				B58BF1982032133C006921B2 /* Frameworks */,
-				B58BF1992032133C006921B2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B58BF19D2032133C006921B2 /* PBXTargetDependency */,
-			);
-			name = LinkerTests;
-			productName = LinkerTests;
-			productReference = B58BF19B2032133C006921B2 /* LinkerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -170,11 +133,6 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
-					};
-					B58BF19A2032133C006921B2 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = B58BF1862032133C006921B2;
 					};
 				};
 			};
@@ -192,7 +150,6 @@
 			projectRoot = "";
 			targets = (
 				B58BF1862032133C006921B2 /* Linker */,
-				B58BF19A2032133C006921B2 /* LinkerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,13 +162,6 @@
 				B5A43E69203489B9004D27CA /* LaunchScreen.storyboard in Resources */,
 				B5A43E66203489B9004D27CA /* Assets.xcassets in Resources */,
 				B5A43E6A203489B9004D27CA /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B58BF1992032133C006921B2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,22 +183,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B58BF1972032133C006921B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B58BF19D2032133C006921B2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B58BF1862032133C006921B2 /* Linker */;
-			targetProxy = B58BF19C2032133C006921B2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B5A43E4E203489B9004D27CA /* LaunchScreen.storyboard */ = {
@@ -416,40 +351,6 @@
 			};
 			name = Release;
 		};
-		B58BF1A82032133C006921B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NX84NCXAJ3;
-				INFOPLIST_FILE = LinkerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.maksimkurpa.LinkerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Linker.app/Linker";
-			};
-			name = Debug;
-		};
-		B58BF1A92032133C006921B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NX84NCXAJ3;
-				INFOPLIST_FILE = LinkerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.maksimkurpa.LinkerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Linker.app/Linker";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -467,15 +368,6 @@
 			buildConfigurations = (
 				B58BF1A52032133C006921B2 /* Debug */,
 				B58BF1A62032133C006921B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B58BF1A72032133C006921B2 /* Build configuration list for PBXNativeTarget "LinkerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B58BF1A82032133C006921B2 /* Debug */,
-				B58BF1A92032133C006921B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
