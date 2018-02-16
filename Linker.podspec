@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/MaksimKurpa/Linker'
   s.source       = { :git => 'https://github.com/MaksimKurpa/Linker.git', :branch => 'master',:tag => s.version.to_s }
   s.social_media_url = 'https://www.facebook.com/maksim.kurpa'
-  s.source_files = 'Linker/Sources/*.{h,m}'
+  s.source_files = 'Linker/Sources/Linker/*.{swift}'
   s.requires_arc = true
 end
