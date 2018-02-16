@@ -70,17 +70,32 @@ github "Linker/Linker"
 
 (see sample Xcode project Demo)
 
-The main thought of this framework is useful and convenient handling of external and internal URLs in your iOS application. Linker provides only one function to install your own handler to specific URL. A dependency between specific URL and your closure is based on `scheme` and `host` of each URL. That is you can configure miscellaneous behavior for different components of specific URL. 
+The main thought of this framework is useful and convenient handling of external and internal URLs in your iOS application. Linker provides only one function to install your own handler to specific URL. A dependency between specific URL and your closure is based on `scheme` and `host` of each URL. That is you can configure miscellaneous behavior for different components of specific URL. You can split hadling by `query` with different parameters and/or by `path`, `fragment`.
+<details>
+  <summary><strong>Realization details</strong></summary>
+On start of your application occurs swizzling methods in `UIApplication` and `UIApplicationDelegate` of your application. Original implementation exchanged on Linker implementation, where occur handle process. If Linker con't handle specific URL, original implementation of this method will be called.
+
+Swizzled methods:
+
+UIApplication.shared - openURL:options:completionHandler:
+UIApplication.shared - openURL: (deprecated since iOS 10.0)
+
+UIApplication.shared.delegate - application:openURL:options:
+UIApplication.shared.delegate - application:openURL:sourceApplication:annotation: (deprecated since iOS 9.0)
+UIApplication.shared.delegate - application:handleOpenURL: (deprecated since iOS 9.0)
+</details>
 
 For complience with URL style, use format:
 
-`linker://inapp_am?type=subscription&productID=com.yourLLC.yourapp.7days_trial`
+`linker://inapp_am/buy_subscription?type=subscription&productID=com.yourLLC.yourapp.7days_trial#test`
 
 where:
 
-scheme - `linker`,
-host   - `inapp_am`,
-query  - `type=subscription&productID=com.yourLLC.yourapp.7days_trial`
+scheme   - `linker`,
+host     - `inapp_am`,
+query    - `type=subscription&productID=com.yourLLC.yourapp.7days_trial`
+path     - `buy_subscription`
+fragment - `test`
 
 If you don't need configuration with complexed behavior, you can use URL without `query`:
 
