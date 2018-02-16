@@ -2,5 +2,3 @@ os:
   - osx
 language: swift
 osx_image: xcode9.2
-script:
-  - ./bin/tests
