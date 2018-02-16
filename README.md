@@ -68,6 +68,10 @@ github "Linker/Linker"
 
 ## Usage
 
+(see sample Xcode project Demo)
+
+The main thought of this framework is useful and convenient handling of external and internal URLs in your iOS application. Linker provides only one function to install your own handler to specific URL. A dependency between specific URL and your closure is based on `scheme` and `host` of each URL. That is you can configure miscellaneous behavior for different components of specific URL. You can split handling by `query` with different parameters and/or by `path`, `fragment`.
+
 <details>
   <summary><strong>Realization details</strong></summary>
 On start of your application occurs swizzling methods in `UIApplication` and `UIApplicationDelegate` of your application. Original implementation exchanged on Linker's implementation, where occur handle process. If Linker can't handle specific URL, original implementation of this method will be called.
@@ -85,10 +89,6 @@ Swizzled functions:
 `UIApplication.shared.delegate - application:handleOpenURL:` (deprecated since iOS 9.0)
 </details>
 
-
-(see sample Xcode project Demo)
-
-The main thought of this framework is useful and convenient handling of external and internal URLs in your iOS application. Linker provides only one function to install your own handler to specific URL. A dependency between specific URL and your closure is based on `scheme` and `host` of each URL. That is you can configure miscellaneous behavior for different components of specific URL. You can split handling by `query` with different parameters and/or by `path`, `fragment`.
 
 For complience with URL style, use format:
 
