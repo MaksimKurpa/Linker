@@ -70,21 +70,24 @@ github "Linker/Linker"
 
 (see sample Xcode project Demo)
 
+The main thought of this framework is useful and convenient handling of external and internal URLs in your iOS application. Linker provides only one function to install your own handler to specific URL. A dependency between specific URL and your closure is based on `scheme` and `host` of each URL. That is you can configure miscellaneous behavior for different components of specific URL. 
+
 For complience with URL style, use format:
 
-`linker://inapp_am?type=subscription&productID=com.examplellc.dlh.7days`
+`linker://inapp_am?type=subscription&productID=com.yourLLC.yourapp.7days_trial`
 
 where:
 
 scheme - `linker`,
 host   - `inapp_am`,
-query  - `type=subscription&productID=com.examplellc.dlh.7days`
+query  - `type=subscription&productID=com.yourLLC.yourapp.7days_trial`
 
 If you don't need configuration with complexed behavior, you can use URL without `query`:
 
 `linker://show_subscription_screen`
 
-One special case - handle external URLs when app isn't launched. After i
+One special case - handle external URLs when app isn't launched. After installation closure to specific URL you should call any func from `UIAppication` or `UIApplicationDelegate`, which process URLs. For example, func
+'`openURL:options:completionHandler:` in `UIApplication`.
 
 ```Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -98,23 +101,45 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         return true
     }
 ```
-In other cases of usage you should set your handle closure for special URl before calling its from sowewhere.
+In other cases of usage you should set your handle closure for special URl before calling its from somewhere.
 
-# Notice: Only the last sent closure for a unique URL will be executed.
+
+<h3 align="center"> (!) Notice: Only the last sent closure for a unique URL will be executed.</h3>
 
 ```Swift
 class ViewController: UIViewController {
     
-    let url = URL(string: "linker://viewcontroller?title=ExampleAlert&description=ExampleDescriptionAlert")!
+    let sourceURL = URL(string: "linker://viewcontroller?title=ExampleAlert&description=ExampleDescriptionAlert")!
 
     @IBAction func action(_ sender: Any) {
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        UIApplication.shared.open(sourceURL, options: [:], completionHandler: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Linker.handle(url) { url in
-            print("URL handled")
+        Linker.handle(sourceURL) { url in
+        
+            guard let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems! else {
+                return }
+            var title : String? = nil
+            var description: String? = nil
+            
+            for item in queryItems {
+                if item.name == "title" {
+                    title = item.value
+                }
+                if item.name == "description" {
+                    description = item.value;
+                }
+            }
+            
+            if let name = title, let message = description {
+                let alertVC = UIAlertController(title: name, message: message, preferredStyle: UIAlertControllerStyle.alert)
+                alertVC.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {action in
+                    alertVC.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertVC, animated: false, completion: nil)
+            }
         }
     }
 }
