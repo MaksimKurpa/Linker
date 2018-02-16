@@ -104,7 +104,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 In other cases of usage you should set your handle closure for special URl before calling its from somewhere.
 
 
-<h3 align="center"> (!) Notice: Only the last sent closure for a unique URL will be executed.</h3>
+<h1> (!) Notice: Only the last sent closure for a unique URL will be executed.<h1>
 
 ```Swift
 class ViewController: UIViewController {
