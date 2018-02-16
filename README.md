@@ -61,7 +61,7 @@ $ brew install carthage
 To integrate Linker into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Linker/Linker"
+github "Linker"
 ```
 
 </details>
