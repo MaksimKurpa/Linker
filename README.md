@@ -88,7 +88,7 @@ Swizzled functions:
 
 (see sample Xcode project Demo)
 
-The main thought of this framework is useful and convenient handling of external and internal URLs in your iOS application. Linker provides only one function to install your own handler to specific URL. A dependency between specific URL and your closure is based on `scheme` and `host` of each URL. That is you can configure miscellaneous behavior for different components of specific URL. You can split hadling by `query` with different parameters and/or by `path`, `fragment`.
+The main thought of this framework is useful and convenient handling of external and internal URLs in your iOS application. Linker provides only one function to install your own handler to specific URL. A dependency between specific URL and your closure is based on `scheme` and `host` of each URL. That is you can configure miscellaneous behavior for different components of specific URL. You can split handling by `query` with different parameters and/or by `path`, `fragment`.
 
 For complience with URL style, use format:
 
@@ -106,12 +106,11 @@ path     - `buy_subscription`
 
 fragment - `test`
 
-If you don't need configuration with complexed behavior, you can use URL without `query`:
+If you don't need configuration with complexed behavior, you can use URL just with `host`:
 
-`linker://show_subscription_screen`
+`linker://inapp_am`
 
-One special case - handle external URLs when app isn't launched. After installation closure to specific URL you should call any func from `UIAppication` or `UIApplicationDelegate`, which process URLs. For example, func
-'`openURL:options:completionHandler:` in `UIApplication`.
+One special case - handle external URLs when app isn't launched. After installation closure to specific URL you should call any func from `UIAppication` or `UIApplicationDelegate`, which process URLs. For example, function `openURL:options:completionHandler:` in `UIApplication`.
 
 ```Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -128,7 +127,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 In other cases of usage you should set your handle closure for special URl before calling its from somewhere.
 
 
-<h5> (!) Notice: Only the last sent closure for a unique URL will be executed.</h5>
+<h5> (!) Notice: Only the last sent closure for a unique URL (scheme + host) will be executed.</h5>
 
 ```Swift
 class ViewController: UIViewController {
