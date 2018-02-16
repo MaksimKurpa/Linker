@@ -17,7 +17,7 @@ class LNAppDelegate: UIResponder, UIApplicationDelegate {
         
         if let launchURL = launchOptions?[UIApplicationLaunchOptionsKey.url] as? URL {
             Linker.handle(launchURL, closure: { url in
-                UIAlertView(title: "Hello", message: "world!", delegate: nil, cancelButtonTitle: "OK", otherButtonTitles: "Cancel").show()
+                print("Your URL has been handle!")
             })
             _ = [UIApplication.shared .open(launchURL, options: [:], completionHandler: nil)]
         }

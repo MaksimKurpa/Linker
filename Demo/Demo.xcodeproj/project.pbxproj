@@ -25,7 +25,7 @@
 		B55918702035CE2200AFB31A /* LinkerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkerModel.swift; sourceTree = "<group>"; };
 		B55918712035CE2200AFB31A /* LinkerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkerExtensions.swift; sourceTree = "<group>"; };
 		B55918722035CE2200AFB31A /* LinkerTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkerTypes.swift; sourceTree = "<group>"; };
-		B58BF1872032133C006921B2 /* Linker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B58BF1872032133C006921B2 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A43E4A203489B9004D27CA /* LNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LNViewController.swift; sourceTree = "<group>"; };
 		B5A43E4B203489B9004D27CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5A43E4C203489B9004D27CA /* LNAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LNAppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		B58BF1882032133C006921B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B58BF1872032133C006921B2 /* Linker.app */,
+				B58BF1872032133C006921B2 /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,9 +102,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B58BF1862032133C006921B2 /* Linker */ = {
+		B58BF1862032133C006921B2 /* Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B58BF1A42032133C006921B2 /* Build configuration list for PBXNativeTarget "Linker" */;
+			buildConfigurationList = B58BF1A42032133C006921B2 /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
 				B58BF1832032133C006921B2 /* Sources */,
 				B58BF1842032133C006921B2 /* Frameworks */,
@@ -114,9 +114,9 @@
 			);
 			dependencies = (
 			);
-			name = Linker;
+			name = Demo;
 			productName = Linker;
-			productReference = B58BF1872032133C006921B2 /* Linker.app */;
+			productReference = B58BF1872032133C006921B2 /* Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -149,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B58BF1862032133C006921B2 /* Linker */,
+				B58BF1862032133C006921B2 /* Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -363,7 +363,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B58BF1A42032133C006921B2 /* Build configuration list for PBXNativeTarget "Linker" */ = {
+		B58BF1A42032133C006921B2 /* Build configuration list for PBXNativeTarget "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B58BF1A52032133C006921B2 /* Debug */,

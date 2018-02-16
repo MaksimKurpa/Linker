@@ -9,21 +9,38 @@
 import UIKit
 
 class LNViewController: UIViewController {
-    let url = URL(string: "linker://viewcontroller?title=ExampleAlert&description=ExampleDescriptionAlert")!
+    
+    let sourceURL = URL(string: "linker://viewcontroller?title=ExampleAlert&description=ExampleDescriptionAlert")!
 
     @IBAction func action(_ sender: Any) {
-        
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//        UIApplication.shared .openURL(url)
-        
-//        UIApplication.shared.delegate!.application!(UIApplication.shared, open: url, options: [:])
-//        UIApplication.shared.delegate!.application!(UIApplication.shared, handleOpen: url)
-//        UIApplication.shared.delegate!.application!(UIApplication.shared, open: url, sourceApplication: nil, annotation: "sd")
+        UIApplication.shared.open(sourceURL, options: [:], completionHandler: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Linker.handle(url) { url in
-            print("URL handled")
+        Linker.handle(sourceURL) { url in
+        
+            guard let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems! else {
+                return }
+            var title : String? = nil
+            var description: String? = nil
+            
+            for item in queryItems {
+                if item.name == "title" {
+                    title = item.value
+                }
+                if item.name == "description" {
+                    description = item.value;
+                }
+            }
+            
+            if let name = title, let message = description {
+                let alertVC = UIAlertController(title: name, message: message, preferredStyle: UIAlertControllerStyle.alert)
+                alertVC.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {action in
+                    alertVC.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertVC, animated: false, completion: nil)
+            }
         }
     }
 }
