@@ -1,7 +1,7 @@
 <p align="center">
   <img src="Linker/Configs/logo.png"/>
   <h3 align="center">Linker</h3>
-  <p align="center">Lightweight way to handle internal and external URLs in Swift for iOS.</p>
+  <p align="center">Lightweight way to handle internal and external deeplinks in Swift for iOS.</p>
   <p align="center">
     <a href="https://swift.org"><img src="https://img.shields.io/badge/swift-4.0-orange.svg"></a>
     <a href="https://github.com/MaksimKurpa/Linker"><img src="https://img.shields.io/cocoapods/p/Linker.svg"></a>
@@ -68,22 +68,27 @@ github "Linker/Linker"
 
 ## Usage
 
+<details>
+  <summary><strong>Realization details</strong></summary>
+On start of your application occurs swizzling methods in `UIApplication` and `UIApplicationDelegate` of your application. Original implementation exchanged on Linker's implementation, where occur handle process. If Linker can't handle specific URL, original implementation of this method will be called.
+
+Swizzled functions:
+
+`UIApplication.shared - openURL:options:completionHandler:`
+
+`UIApplication.shared - openURL:` (deprecated since iOS 10.0)
+
+`UIApplication.shared.delegate - application:openURL:options:`
+
+`UIApplication.shared.delegate - application:openURL:sourceApplication:annotation:` (deprecated since iOS 9.0)
+
+`UIApplication.shared.delegate - application:handleOpenURL:` (deprecated since iOS 9.0)
+</details>
+
+
 (see sample Xcode project Demo)
 
 The main thought of this framework is useful and convenient handling of external and internal URLs in your iOS application. Linker provides only one function to install your own handler to specific URL. A dependency between specific URL and your closure is based on `scheme` and `host` of each URL. That is you can configure miscellaneous behavior for different components of specific URL. You can split hadling by `query` with different parameters and/or by `path`, `fragment`.
-<details>
-  <summary><strong>Realization details</strong></summary>
-On start of your application occurs swizzling methods in `UIApplication` and `UIApplicationDelegate` of your application. Original implementation exchanged on Linker implementation, where occur handle process. If Linker con't handle specific URL, original implementation of this method will be called.
-
-Swizzled methods:
-
-UIApplication.shared - openURL:options:completionHandler:
-UIApplication.shared - openURL: (deprecated since iOS 10.0)
-
-UIApplication.shared.delegate - application:openURL:options:
-UIApplication.shared.delegate - application:openURL:sourceApplication:annotation: (deprecated since iOS 9.0)
-UIApplication.shared.delegate - application:handleOpenURL: (deprecated since iOS 9.0)
-</details>
 
 For complience with URL style, use format:
 
@@ -92,9 +97,13 @@ For complience with URL style, use format:
 where:
 
 scheme   - `linker`,
+
 host     - `inapp_am`,
+
 query    - `type=subscription&productID=com.yourLLC.yourapp.7days_trial`
+
 path     - `buy_subscription`
+
 fragment - `test`
 
 If you don't need configuration with complexed behavior, you can use URL without `query`:
