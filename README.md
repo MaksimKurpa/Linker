@@ -92,11 +92,11 @@ Swizzled functions:
 
 For complience with URL style, use format:
 
-`linker://inapp_am/buy_subscription?type=subscription&productID=com.yourLLC.yourapp.7days_trial#test`
+`your_app_url_scheme://inapp_am/buy_subscription?type=subscription&productID=com.yourLLC.yourapp.7days_trial#test`
 
 where:
 
-scheme   - `linker`,
+scheme   - `your_app_url_scheme`,
 
 host     - `inapp_am`,
 
@@ -108,7 +108,7 @@ fragment - `test`
 
 If you don't need configuration with complexed behavior, you can use URL just with `host`:
 
-`linker://inapp_am`
+`your_app_url_scheme://some_host_from_your_app`
 
 One special case - handle external URLs when app isn't launched. After installation closure to specific URL you should call any func from `UIAppication` or `UIApplicationDelegate`, which process URLs. For example, function `openURL:options:completionHandler:` in `UIApplication`.
 
