@@ -92,7 +92,7 @@ Swizzled functions:
 
 For complience with URL style, use format:
 
-`your_app_url_scheme://inapp_am/buy_subscription?type=subscription&productID=com.yourLLC.yourapp.7days_trial#test`
+`your_app_url_scheme://inapp_am/buy_subscription?type=subscription&productID=com.yourapp.7days_trial#test`
 
 where:
 
@@ -100,7 +100,7 @@ scheme   - `your_app_url_scheme`,
 
 host     - `inapp_am`,
 
-query    - `type=subscription&productID=com.yourLLC.yourapp.7days_trial`
+query    - `type=subscription&productID=com.yourapp.7days_trial`
 
 path     - `buy_subscription`
 
