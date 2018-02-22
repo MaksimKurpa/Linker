@@ -5,7 +5,7 @@
   <p align="center">
     <a href="https://swift.org"><img src="https://img.shields.io/badge/swift-4.0-orange.svg"></a>
     <a href="https://github.com/MaksimKurpa/Linker"><img src="https://img.shields.io/cocoapods/p/Linker.svg"></a>
-    <a href="https://cocoapods.org/pods/Linker"><img src="https://travis-ci.org/MaksimKurpa/Linker.svg?branch=master"></a>
+    <a href="https://travis-ci.org/MaksimKurpa/Linker"><img src="https://travis-ci.org/MaksimKurpa/Linker.svg?branch=master"></a>
     <a href="https://github.com/MaksimKurpa/Linker"><img src="https://img.shields.io/cocoapods/v/Linker.svg"></a>
     <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 	<a href="https://raw.githubusercontent.com/Linker/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/Linker.svg"></a>
@@ -167,7 +167,7 @@ class ViewController: UIViewController {
     }
 }
 ```
-
+[Objective C version](https://github.com/MaksimKurpa/DeepLinksHandler) with the same functionality is available via [CocoaPods](http://cocoapods.org).
 ## Contributing
 
 Issues and pull requests are welcome!
