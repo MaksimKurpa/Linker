@@ -167,7 +167,8 @@ class ViewController: UIViewController {
     }
 }
 ```
-[Objective C version](https://github.com/MaksimKurpa/DeepLinksHandler) with the same functionality is available via [CocoaPods](http://cocoapods.org).
+You can also find Objective-C version of this [here](https://github.com/MaksimKurpa/DeepLinksHandler).
+
 ## Contributing
 
 Issues and pull requests are welcome!
