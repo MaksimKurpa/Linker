@@ -48,7 +48,7 @@ open class Linker: NSObject {
         }
         
         let executionIMP : IMP?
-        let argumentsCount = selector.argumentsCount() + 1//- because val0 always object which recieve a message
+        let argumentsCount = selector.argumentsCount() + 1//- because val0 always object which receive a message
         
         switch argumentsCount {
         case 2:
