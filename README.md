@@ -86,8 +86,7 @@ Swizzled functions:
 
 `UIApplication.shared.delegate - application:openURL:sourceApplication:annotation:` (deprecated since iOS 9.0)
 
-`UIApplication.shared.delegate - application:handleOpenURL:` (deprecated since iOS 9.0)
-</details>
+`UIApplication.shared.delegate - application:handleOpenURL:` (deprecated since iOS 9.0) </details>
 
 
 For complience with URL style, use format:
@@ -100,9 +99,9 @@ scheme   - `your_app_url_scheme`,
 
 host     - `inapp_am`,
 
-query    - `type=subscription&productID=com.yourapp.7days_trial`
-
 path     - `buy_subscription`
+
+query    - `type=subscription&productID=com.yourapp.7days_trial`
 
 fragment - `test`
 
