@@ -3,7 +3,7 @@
   <h3 align="center">Linker</h3>
   <p align="center">Lightweight way to handle internal and external deeplinks in Swift for iOS.</p>
   <p align="center">
-    <a href="https://swift.org"><img src="https://img.shields.io/badge/swift-4.0-orange.svg"></a>
+    <a href="https://swift.org"><img src="https://camo.githubusercontent.com/aa026700c1aea948646712ee9108a663aa59941b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f53776966742d342e782d626c75652e737667"></a>
     <a href="https://github.com/MaksimKurpa/Linker"><img src="https://img.shields.io/cocoapods/p/Linker.svg"></a>
     <a href="https://travis-ci.org/MaksimKurpa/Linker"><img src="https://travis-ci.org/MaksimKurpa/Linker.svg?branch=master"></a>
     <a href="https://github.com/MaksimKurpa/Linker"><img src="https://img.shields.io/cocoapods/v/Linker.svg"></a>
