@@ -118,7 +118,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
             Linker.handle(launchURL, closure: { url in
                 print("Your URL has been handle!")
             })
-            _ = [UIApplication.shared.open(launchURL, options: [:], completionHandler: nil)]
+            UIApplication.shared.open(launchURL, options: [:], completionHandler: nil)
         }
         return true
     }
