@@ -3,9 +3,9 @@
   <h3 align="center">Linker</h3>
   <p align="center">Lightweight way to handle internal and external deeplinks in Swift for iOS.</p>
   <p align="center">
-    <a href="https://swift.org"><img src="https://img.shields.io/badge/swift-4.0-orange.svg"></a>
+    <a href="https://swift.org"><img src="https://camo.githubusercontent.com/aa026700c1aea948646712ee9108a663aa59941b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f53776966742d342e782d626c75652e737667"></a>
     <a href="https://github.com/MaksimKurpa/Linker"><img src="https://img.shields.io/cocoapods/p/Linker.svg"></a>
-    <a href="https://cocoapods.org/pods/Linker"><img src="https://travis-ci.org/MaksimKurpa/Linker.svg?branch=master"></a>
+    <a href="https://travis-ci.org/MaksimKurpa/Linker"><img src="https://travis-ci.org/MaksimKurpa/Linker.svg?branch=master"></a>
     <a href="https://github.com/MaksimKurpa/Linker"><img src="https://img.shields.io/cocoapods/v/Linker.svg"></a>
     <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 	<a href="https://raw.githubusercontent.com/Linker/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/Linker.svg"></a>
@@ -61,7 +61,7 @@ $ brew install carthage
 To integrate Linker into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Linker/Linker"
+github "Linker"
 ```
 
 </details>
@@ -86,29 +86,28 @@ Swizzled functions:
 
 `UIApplication.shared.delegate - application:openURL:sourceApplication:annotation:` (deprecated since iOS 9.0)
 
-`UIApplication.shared.delegate - application:handleOpenURL:` (deprecated since iOS 9.0)
-</details>
+`UIApplication.shared.delegate - application:handleOpenURL:` (deprecated since iOS 9.0) </details>
 
 
 For complience with URL style, use format:
 
-`linker://inapp_am/buy_subscription?type=subscription&productID=com.yourLLC.yourapp.7days_trial#test`
+`your_app_url_scheme://inapp_am/buy_subscription?type=subscription&productID=com.yourapp.7days_trial#test`
 
 where:
 
-scheme   - `linker`,
+scheme   - `your_app_url_scheme`,
 
 host     - `inapp_am`,
 
-query    - `type=subscription&productID=com.yourLLC.yourapp.7days_trial`
-
 path     - `buy_subscription`
+
+query    - `type=subscription&productID=com.yourapp.7days_trial`
 
 fragment - `test`
 
 If you don't need configuration with complexed behavior, you can use URL just with `host`:
 
-`linker://inapp_am`
+`your_app_url_scheme://some_host_from_your_app`
 
 One special case - handle external URLs when app isn't launched. After installation closure to specific URL you should call any func from `UIAppication` or `UIApplicationDelegate`, which process URLs. For example, function `openURL:options:completionHandler:` in `UIApplication`.
 
@@ -119,7 +118,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
             Linker.handle(launchURL, closure: { url in
                 print("Your URL has been handle!")
             })
-            _ = [UIApplication.shared.open(launchURL, options: [:], completionHandler: nil)]
+            UIApplication.shared.open(launchURL, options: [:], completionHandler: nil)
         }
         return true
     }
@@ -167,6 +166,7 @@ class ViewController: UIViewController {
     }
 }
 ```
+You can also find Objective-C version of this [here](https://github.com/MaksimKurpa/DeepLinksHandler).
 
 ## Contributing
 
