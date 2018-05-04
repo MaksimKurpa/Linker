@@ -109,21 +109,21 @@ If you don't need configuration with complexed behavior, you can use URL just wi
 
 `your_app_url_scheme://some_host_from_your_app`
 
-One special case - handle external URLs when app isn't launched. After installation closure to specific URL you should call any func from `UIAppication` or `UIApplicationDelegate`, which process URLs. For example, function `openURL:options:completionHandler:` in `UIApplication`.
+One special case - handle external URLs when app isn't launched. You should install closure for specific URL and if this url will be in pair with `UIApplicationLaunchOptionsKey` in `launchOptions` - this url will be handled.
 
 ```Swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        if let launchURL = launchOptions?[UIApplicationLaunchOptionsKey.url] as? URL {
-            Linker.handle(launchURL, closure: { url in
-                print("Your URL has been handle!")
-            })
-            UIApplication.shared.open(launchURL, options: [:], completionHandler: nil)
-        }
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool 
+{
+    let launchURL = URL(string: "linker://launchURL")!
+    
+    //if launchUrl equal launchOptions?[UIApplicationLaunchOptionsKey.url] -> this closure will be handled after app launch
+    Linker.handle(launchURL, closure: { url in
+	print("Your URL has been handle!")
+    })
         return true
     }
 ```
-In other cases of usage you should set your handle closure for special URl before calling its from somewhere.
+In other cases of usage you should set your handle closure for special URL before calling its from somewhere. If you have a few places where you need handle one specific url, you should reassign closure where latest set closure should have right `context`.
 
 
 <h5> (!) Notice: Only the last sent closure for a unique URL (scheme + host) will be executed.</h5>
