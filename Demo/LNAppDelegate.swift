@@ -15,12 +15,10 @@ class LNAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if let launchURL = launchOptions?[UIApplicationLaunchOptionsKey.url] as? URL {
-            Linker.handle(launchURL, closure: { url in
-                print("Your URL has been handle!")
-            })
-            UIApplication.shared.open(launchURL, options: [:], completionHandler: nil)
-        }
+        let launchURL = URL(string: "linker://launchURL")!
+        Linker.handle(launchURL, closure: { url in
+            print("Your URL has been handle!")
+        })
         
         return true
     }
